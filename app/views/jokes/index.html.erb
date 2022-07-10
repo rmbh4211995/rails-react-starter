@@ -2,15 +2,7 @@
 
 <p>We have <%= Joke.public_count %> inside jokes from our first dev on site!</p>
 
-<ul>
-  <% @jokes.each do |joke| %>
-    <% unless joke.archived? %>
-      <li>
-        <%= link_to joke.title, joke %>
-      </li>
-    <% end %>
-  <% end %>
-</ul>
+<%= render partial: "joke", collection: @jokes, as: :joke %>
 
 <br>
 <%= link_to "New Joke", new_joke_path %>

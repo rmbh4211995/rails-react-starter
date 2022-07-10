@@ -1,0 +1,9 @@
+<ul>
+  <% @jokes.each do |joke| %>
+    <% unless joke.archived? %>
+      <li>
+        <%= link_to joke.title, joke %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

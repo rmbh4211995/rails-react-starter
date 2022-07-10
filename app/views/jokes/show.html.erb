@@ -21,7 +21,9 @@
 </ul>
 
 <h3>Comments</h3>
-<%= render @joke.comments %>
+
+<%# NOTE: is equivalent to render partial: "comments/comment", collection: @joke.comments, as: :comment %>
+<%# render @joke.comments %>
 
 <h6>Add comment</h6>
 <%= render 'comments/form' %>
