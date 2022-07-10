@@ -73,3 +73,4 @@ end
 
 
 gem "vite_rails"
+gem "tailwindcss-rails", "~> 2.0"

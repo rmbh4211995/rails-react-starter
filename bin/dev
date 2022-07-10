@@ -1,7 +1,9 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env bash
 
-def main
-  exec('foreman start -f Procfile.dev -p 3000')
-end
+if ! command -v foreman &> /dev/null
+then
+  echo "Installing foreman..."
+  gem install foreman
+fi
 
-main
+foreman start -f Procfile.dev

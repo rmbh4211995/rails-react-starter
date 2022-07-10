@@ -18,7 +18,7 @@ export const Jokes = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-red-500">
       {jokes.map((j) => (
         <div key={j.id}>
           <p>{j.title}</p>
