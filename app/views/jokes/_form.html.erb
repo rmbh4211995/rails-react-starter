@@ -1,0 +1,47 @@
+<%# all partials must be prefixed with _ %>
+<%# during rendering, it is referenced without _ %>
+
+<%= form_with model: joke do |form| %>
+  <div>
+    <%= form.label :author %>
+    <br>
+    <%= form.text_field :author %>
+    <% joke.errors.full_messages_for(:author).each do |msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :title %>
+    <br>
+    <%= form.text_area :title %>
+    <% joke.errors.full_messages_for(:title).each do |msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <br>
+    <%= form.text_area :description %>
+    <% joke.errors.full_messages_for(:description).each do |msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+    <%= link_to "Cancel", jokes_path %>
+  </div>
+<% end %>

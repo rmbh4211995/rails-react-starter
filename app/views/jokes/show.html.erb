@@ -1,0 +1,30 @@
+<h1>
+  <%= @joke.title %> 
+</h1>
+<p>
+  <%= @joke.description %>
+</p>
+<p>
+  - <%= @joke.author %>
+</p>
+
+<ul>
+  <li>
+    <%= link_to "Edit", edit_joke_path(@joke) %>
+  </li>
+  <li>
+    <%= link_to "Delete", joke_path(@joke), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %>
+  </li>
+</ul>
+
+<h3>Comments</h3>
+<%= render @joke.comments %>
+
+<h6>Add comment</h6>
+<%= render 'comments/form' %>
+
+<%= link_to "Back to jokes", jokes_path %>
+

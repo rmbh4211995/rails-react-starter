@@ -1,0 +1,16 @@
+<h1>Jokes</h1>
+
+<p>We have <%= Joke.public_count %> inside jokes from our first dev on site!</p>
+
+<ul>
+  <% @jokes.each do |joke| %>
+    <% unless joke.archived? %>
+      <li>
+        <%= link_to joke.title, joke %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br>
+<%= link_to "New Joke", new_joke_path %>

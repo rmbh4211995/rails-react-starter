@@ -1,0 +1,10 @@
+<% unless comment.archived? %>
+  <%= comment.body %> - <i><%= comment.author %></i>
+<% end %>
+
+<p>
+  <%= link_to "Destroy Comment", [comment.joke, comment], data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              } %>
+</p>
