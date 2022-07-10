@@ -11,6 +11,12 @@ module RailsReactStarter
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # https://edgeguides.rubyonrails.org/active_job_basics.html#setting-the-backend
+    # Be sure to have the adapter's gem in your Gemfile
+    # and follow the adapter's specific installation
+    # and deployment instructions.
+    config.active_job.queue_adapter = :sidekiq
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

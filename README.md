@@ -51,10 +51,17 @@ Generating a model
 `rails generate model Joke author:string body:text`
 `rails generate model Comment author:string body:text joke:references`
 
+Generating a job
+`rails generate job HelloWorld`
+
 ## Database
 
 Apply migrations
 `rails db:migrate`
+
+## Redis
+
+Sidekiq workers store job data in a Redis db. Docker image is pulled from [bitnami/redis](https://hub.docker.com/r/bitnami/redis/)
 
 ## Routes
 

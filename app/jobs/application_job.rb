@@ -1,4 +1,7 @@
 class ApplicationJob < ActiveJob::Base
+  # Active Job setup guide at https://github.com/mperham/sidekiq/wiki/Active-Job
+  # include Sidekiq::Job
+
   # Automatically retry jobs that encountered a deadlock
   # retry_on ActiveRecord::Deadlocked
 

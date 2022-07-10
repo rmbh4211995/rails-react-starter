@@ -6,4 +6,8 @@ then
   gem install foreman
 fi
 
+# start redis
+docker-compose -f docker-compose-redis-only.yml up -d
+
+# start application
 foreman start -f Procfile.dev
