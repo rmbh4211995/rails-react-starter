@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+def main
+  exec('foreman start -f Procfile.dev -p 3000')
+end
+
+main

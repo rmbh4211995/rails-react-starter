@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>                                                                      
+<html> 
   <head>
     <title>Rails React Starter</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <%= yield :head %>
+
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag 'index.jsx' %>
   </head>
 
   <body>
-    <a href='/frontend/ruby'>Ruby</a>
-    <a href='/frontend'>React</a>
+    <div id="root" />
     <%= yield %>
   </body>
 </html>
