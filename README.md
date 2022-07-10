@@ -21,14 +21,26 @@ Things you may want to cover:
 
 - Deployment instructions
 
-- ...
-
 ## Development
 
 Run dev server
 `rails server`
 
-React frontend is supported through [jsbundling-rails](https://github.com/rails/jsbundling-rails). All react related code is located under /javascript and bundled with esbuild.
+React is supported through [vite-ruby](https://vite-ruby.netlify.app/guide/introduction.html#why-vite-ruby-%F0%9F%A4%94). All react related code is located under /app/frontend.
+
+Ruby views follow the same rails conventions.
+
+## CSS
+
+Tailwind is setup through [tailwindcss-rails](https://tailwindcss.com/docs/guides/ruby-on-rails). The config file is located at /app/config/tailwind.config.js.
+It is available on both React and Ruby frontends.
+
+## API
+
+An api layer is setup under /app/controllers/api/\*\_controller.rb
+You can extend this layer following the typical rails conventions.
+
+For example "api/jokes" will route to "controllers/api/jokes_controller#index"
 
 ## Generators
 
@@ -48,3 +60,10 @@ Apply migrations
 
 Using path helpers
 `joke_path`: `/jokes/#{joke.id}`
+
+## Cross Platform Development
+
+If you are switching between Windows and Linux, you may find git differences due to line endings.
+
+Ignore line ending differences
+`git config core.filemode false`
